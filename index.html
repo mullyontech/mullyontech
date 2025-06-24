@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MullyOnTech | Where Tech Meets Reliability</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
+  </script>
   <style>
     * {
       margin: 0;
@@ -15,6 +22,7 @@
     body {
       background: #fefefe;
       color: #222;
+      scroll-behavior: smooth;
     }
     header {
       background-color: #0b1e36;
@@ -22,36 +30,55 @@
       padding: 20px;
       text-align: center;
     }
+    header img {
+      height: 80px;
+      margin-bottom: 10px;
+    }
     nav {
       display: flex;
       justify-content: center;
       background-color: #0b1e36;
       padding-bottom: 10px;
+      flex-wrap: wrap;
     }
     nav a {
       color: white;
-      margin: 0 15px;
+      margin: 10px;
       text-decoration: none;
       font-weight: 600;
     }
     .hero {
-      background: #eaf8f9;
-      padding: 60px 20px;
+      background: linear-gradient(135deg, #0b1e36, #09273f);
+      color: white;
+      padding: 80px 20px;
       text-align: center;
+      animation: fadeIn 2s ease;
     }
     .hero h1 {
-      font-size: 2.5rem;
-      color: #0b1e36;
+      font-size: 3rem;
+      margin-bottom: 10px;
     }
     .hero p {
-      margin-top: 10px;
-      font-size: 1.2rem;
-      color: #444;
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+    }
+    .cta-button {
+      padding: 12px 24px;
+      background-color: orange;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+    .cta-button:hover {
+      background-color: darkorange;
     }
     .section {
       padding: 40px 20px;
       max-width: 1000px;
       margin: auto;
+      animation: fadeIn 1s ease;
     }
     .section h2 {
       color: #0b1e36;
@@ -68,6 +95,13 @@
       border-radius: 10px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
+    blockquote {
+      font-style: italic;
+      background: #f0f0f0;
+      padding: 15px;
+      border-left: 5px solid orange;
+      margin: 10px 0;
+    }
     footer {
       background-color: #0b1e36;
       color: white;
@@ -75,46 +109,167 @@
       padding: 20px;
       margin-top: 40px;
     }
+    .security-badge {
+      font-size: 0.9rem;
+      text-align: center;
+      margin-top: 20px;
+      color: #0b1e36;
+    }
+    .lang-toggle {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .lang-toggle button {
+      background: #0b1e36;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      margin: 0 5px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .services {
+        grid-template-columns: 1fr;
+      }
+      header h1 {
+        font-size: 1.8rem;
+      }
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
   </style>
 </head>
 <body>
   <header>
+    <img src="logo.png" alt="MullyOnTech Logo">
     <h1>MullyOnTech</h1>
     <p>Where Tech Meets Reliability</p>
   </header>
   <nav>
     <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
     <a href="#about">About</a>
+    <a href="#blog">Blog</a>
+    <a href="#booking">Book</a>
     <a href="#contact">Contact</a>
   </nav>
 
+  <div class="lang-toggle">
+    <button onclick="translateTo('en')">English</button>
+    <button onclick="translateTo('sw')">Swahili</button>
+  </div>
+
   <section class="hero">
-    <h1>Your One-Stop Tech Solution</h1>
-    <p>We provide expert IT support, cybersecurity, logo & web design, and more!</p>
+    <h1>Welcome to MullyOnTech</h1>
+    <p>Your Trusted Partner in Tech Support, Cybersecurity, Web & Logo Design.</p>
+    <a href="#contact" class="cta-button">Get Started</a>
   </section>
 
-  <section class="section" id="services">
-    <h2>Our Services</h2>
+ <section class="section" id="services">
+  <h2>Our Services</h2>
+  <div class="services">
+    
+    <div class="service">
+      <img src="https://img.icons8.com/ios-filled/50/computer-support.png" alt="Tech Support" />
+      <h3>Tech Support</h3>
+      <p>Reliable, fast, and affordable IT support for all your business and personal needs.</p>
+      <a href="#" class="cta-button">Learn More</a>
+    </div>
+
+    <div class="service">
+      <img src="https://img.icons8.com/ios-filled/50/web.png" alt="Web Design" />
+      <h3>Web Design</h3>
+      <p>Beautiful, responsive websites crafted to elevate your online presence.</p>
+      <a href="#" class="cta-button">Learn More</a>
+    </div>
+
+    <div class="service">
+      <img src="https://img.icons8.com/ios-filled/50/source-code.png" alt="Web Development" />
+      <h3>Web Development</h3>
+      <p>Full-stack development with modern tools for smooth user experience and performance.</p>
+      <a href="#" class="cta-button">Learn More</a>
+    </div>
+
+    <div class="service">
+      <img src="https://img.icons8.com/ios-filled/50/lock--v1.png" alt="Cybersecurity" />
+      <h3>Cybersecurity</h3>
+      <p>Protect your data, networks, and devices from cyber threats with our expert solutions.</p>
+      <a href="#" class="cta-button">Learn More</a>
+    </div>
+
+    <div class="service">
+      <img src="https://img.icons8.com/ios-filled/50/consulting.png" alt="IT Consulting" />
+      <h3>IT Consulting</h3>
+      <p>Expert guidance to align your IT strategy with business growth.</p>
+      <a href="#" class="cta-button">Learn More</a>
+    </div>
+
+    <div class="service">
+      <img src="https://img.icons8.com/ios-filled/50/database.png" alt="Database" />
+      <h3>Database Management</h3>
+      <p>Professional database design, optimization, and maintenance solutions.</p>
+      <a href="#" class="cta-button">Learn More</a>
+    </div>
+
+    <div class="service">
+      <img src="https://img.icons8.com/ios-filled/50/remote-desktop.png" alt="Remote Support" />
+      <h3>Remote IT Support</h3>
+      <p>Get fast remote troubleshooting help without leaving your home or office.</p>
+      <a href="#" class="cta-button">Learn More</a>
+    </div>
+
+    <div class="service">
+      <img src="https://img.icons8.com/ios-filled/50/paint-palette.png" alt="Branding" />
+      <h3>Graphic Design & Branding</h3>
+      <p>Stand out with beautiful logos, banners, and brand identity packages.</p>
+      <a href="#" class="cta-button">Learn More</a>
+    </div>
+
+    <div class="service">
+      <img src="https://img.icons8.com/ios-filled/50/installing-updates.png" alt="Software" />
+      <h3>Software Installation</h3>
+      <p>Secure software installs, setup, and updates to keep your systems running.</p>
+      <a href="#" class="cta-button">Learn More</a>
+    </div>
+
+    <div class="service">
+      <img src="https://img.icons8.com/ios-filled/50/cloud-backup-restore.png" alt="Backup" />
+      <h3>Data Backup & Recovery</h3>
+      <p>Ensure your data is safe and restorable with our smart backup solutions.</p>
+      <a href="#" class="cta-button">Learn More</a>
+    </div>
+
+  </div>
+</section>
+
+
+
+  <section class="section" id="pricing">
+    <h2>Our Packages</h2>
     <div class="services">
       <div class="service">
-        <h3>Tech Support</h3>
-        <p>Hardware, software, troubleshooting, installations, and upgrades.</p>
+        <h3>Starter</h3>
+        <p>Logo Design + Simple Website</p>
+        <strong>KES 4,000</strong>
       </div>
       <div class="service">
-        <h3>Logo Design</h3>
-        <p>Professional branding that makes your business stand out.</p>
+        <h3>Pro</h3>
+        <p>Full Website + Branding + Support</p>
+        <strong>KES 10,000</strong>
       </div>
       <div class="service">
-        <h3>Web Design</h3>
-        <p>Beautiful, mobile-friendly websites tailored to your needs.</p>
-      </div>
-      <div class="service">
-        <h3>Cybersecurity</h3>
-        <p>Penetration testing, ethical hacking, and secure system audits.</p>
-      </div>
-      <div class="service">
-        <h3>General IT Services</h3>
-        <p>Networking, system optimization, backups, and more.</p>
+        <h3>Elite</h3>
+        <p>Custom Solutions + Cybersecurity Audit</p>
+        <strong>KES 18,000+</strong>
       </div>
     </div>
   </section>
@@ -124,16 +279,76 @@
     <p>MullyOnTech is a passionate team of tech professionals based in Kenya, offering cutting-edge solutions to modern IT problems. Whether you're a startup, business, or individual — we deliver reliable and affordable services.</p>
   </section>
 
+  <section class="section" id="blog">
+    <h2>Latest From the Blog</h2>
+    <div class="service">
+      <h3>Why Every Business Needs Cybersecurity in 2025</h3>
+      <p>Cyber attacks are rising in Kenya. Learn how to stay safe and protect your systems before it's too late.</p>
+      <a href="#">Read More</a>
+    </div>
+  </section>
+
+  <section class="section" id="booking">
+    <h2>Book a Service</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required><br><br>
+      <input type="email" placeholder="Your Email" required><br><br>
+      <select required>
+        <option value="">Select a Service</option>
+        <option value="web">Web Design</option>
+        <option value="logo">Logo Design</option>
+        <option value="support">Tech Support</option>
+        <option value="cyber">Cybersecurity</option>
+      </select><br><br>
+      <input type="date" required><br><br>
+      <button type="submit">Book Now</button>
+    </form>
+  </section>
+
+  <section class="section" id="testimonials">
+    <h2>What Our Clients Say</h2>
+    <blockquote>“MullyOnTech created my business logo and website. Amazing service!” – Happy Client</blockquote>
+    <blockquote>“Quick and efficient tech support. Highly recommend!” – Satisfied User</blockquote>
+  </section>
+
   <section class="section" id="contact">
     <h2>Contact Us</h2>
-    <p>Email: mullyontech@gmail.com<br>
-       WhatsApp: +254 704738354<br>
-       Instagram: <a href="https://www.instagram.com/mullyontech" target="_blank">@mullyontech</a>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required><br><br>
+      <input type="email" name="email" placeholder="Your Email" required><br><br>
+      <textarea name="message" placeholder="Your Message" required rows="5"></textarea><br><br>
+      <button type="submit" style="padding: 10px 20px; background: #0b1e36; color: white; border: none; border-radius: 6px;">Send</button>
+    </form>
+    <p style="margin-top: 20px;">
+      Email: mullyontech@gmail.com<br>
+      WhatsApp: +254 704738354<br>
+      Instagram: <a href="https://www.instagram.com/mullyontech" target="_blank">@mullyontech</a>
     </p>
   </section>
+
+  <div class="security-badge">
+    🔒 Site Secured & Monitored by MullyOnTech Cybersecurity Team
+  </div>
 
   <footer>
     &copy; 2025 MullyOnTech. All rights reserved.
   </footer>
+
+  <a href="https://wa.me/254704738354" target="_blank" style="position: fixed; bottom: 20px; right: 20px; z-index: 999;">
+    <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="Chat with us on WhatsApp"/>
+  </a>
+
+  <script>
+    function translateTo(lang) {
+      if (lang === 'sw') {
+        alert("Translation to Swahili coming soon!");
+      } else {
+        location.reload();
+      }
+    }
+  </script>
 </body>
 </html>
+
+
+
