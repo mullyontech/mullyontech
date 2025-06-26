@@ -308,22 +308,41 @@
     </div>
   </section>
 
-  <section class="section" id="booking">
-    <h2>Book a Service</h2>
-    <form action="https://formspree.io/f/mblyprgn" method="POST">
-      <input type="text" placeholder="Your Name" required><br><br>
-      <input type="email" placeholder="Your Email" required><br><br>
-      <select required>
-        <option value="">Select a Service</option>
-        <option value="web">Web Design</option>
-        <option value="logo">Logo Design</option>
-        <option value="support">Tech Support</option>
-        <option value="cyber">Cybersecurity</option>
-      </select><br><br>
-      <input type="date" required><br><br>
-      <button type="submit">Book Now</button>
-    </form>
-  </section>
+<section class="section" id="book">
+  <h2>Book a Service</h2>
+  <form action="https://formspree.io/f/mblyprgn" method="POST">
+    
+    <label for="name">Your Name</label><br>
+    <input type="text" name="name" required><br><br>
+
+    <label for="email">Your Email</label><br>
+    <input type="email" name="email" required><br><br>
+
+    <label for="service">Select Service</label><br>
+    <select name="service" required>
+      <option value="">--Choose a Service--</option>
+      <option>Tech Support</option>
+      <option>Web Design</option>
+      <option>Web Development</option>
+      <option>Cybersecurity</option>
+      <option>IT Consulting</option>
+      <option>Database Management</option>
+      <option>Remote IT Support</option>
+      <option>Graphic Design & Branding</option>
+      <option>Software Installation</option>
+      <option>Data Backup & Recovery</option>
+    </select><br><br>
+
+    <label for="date">Preferred Date</label><br>
+    <input type="date" name="date" required><br><br>
+
+    <label for="message">Additional Details</label><br>
+    <textarea name="message" rows="5" placeholder="Tell us more..."></textarea><br><br>
+
+    <button type="submit">Book Now</button>
+  </form>
+</section>
+
 
   <section class="section" id="testimonials">
     <h2>What Our Clients Say</h2>
